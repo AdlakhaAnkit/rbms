@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgredb:
+   container_name: postgredb
+   image: postgredb
+   ports:
+   - "5432"
+   restart: always
+  
+  app:
+    restart: always
+    container_name: rbms
+    image: rbms
+    ports:
+    - "8080:8080"
+    depends_on:
+      - postgredb
