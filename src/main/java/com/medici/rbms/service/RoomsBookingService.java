@@ -109,6 +109,9 @@ public class RoomsBookingService {
 		// To DO - Caching mechanism can be added on this as this information will
 		// change rarely
 		Optional<RoomsType> roomType = roomsTypeRepository.findById(roomsBookingRequest.getRoomTypeId());
+		if (!roomType.isPresent()) {
+			throw new RoomsCustomException(HttpStatus.BAD_REQUEST, RBMSConstants.INVALID_ROOM_TYPE_ID);
+		}
 		RoomsType obj = roomType.get();
 		RoomsBooking roomsBookingEntity = new RoomsBooking();
 		// Fetch all rooms by room type id

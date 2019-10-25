@@ -22,4 +22,7 @@ public class RBMSConstants {
 	/** The Constant BOOKING_NOT_FOUND. */
 	public static final String BOOKING_NOT_FOUND = "Booking details not found";
 
+	/** The Constant INVALID_ROOM_TYPE_ID. */
+	public static final String INVALID_ROOM_TYPE_ID = "Room Type Id not valid";
+
 }
