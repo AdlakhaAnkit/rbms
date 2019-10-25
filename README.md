@@ -7,6 +7,11 @@
 2. Fetch All Rooms Availability- /rooms
    
 3. Book a room- /booking
+   Sample input JSON- {
+  "endDate": "25 Nov 2019",
+  "roomTypeId": 1,
+  "startDate": "20 Nov 2019"
+}
    
 4. Cancel a booking- /booking/{id}
 
