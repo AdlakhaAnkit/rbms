@@ -2,18 +2,18 @@
 
 ## Available Functionality
 
-1. Fetch All Bookings- /bookings
+1. Fetch All Bookings- /rbms/bookings
 
-2. Fetch All Rooms Availability- /rooms
+2. Fetch All Rooms Availability- /rbms/rooms
    
-3. Book a room- /booking
+3. Book a room- /rbms/booking
    Sample input JSON- {
   "endDate": "25 Nov 2019",
   "roomTypeId": 1,
   "startDate": "20 Nov 2019"
 }
    
-4. Cancel a booking- /booking/{id}
+4. Cancel a booking- /rbms/booking/{id}
 
 ## Database Tables
 
