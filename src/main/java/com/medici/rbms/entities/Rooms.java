@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 
 /**
  * The Class Rooms.
+ * 
+ * @author ankadlak
  */
 @Entity(name = "ROOMS")
 public class Rooms {

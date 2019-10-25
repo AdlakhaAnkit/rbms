@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +20,9 @@ import io.swagger.annotations.ApiResponses;
 /**
  * The Class RoomsBookingController- It provides functionality: 1. Get all
  * available rooms /rooms 2. Booking request /booking 3. Get All Bookings
- * /bookings
+ * /bookings 4. Cancel a booking /bookings/{id}
+ * 
+ * @author ankadlak
  */
 @RestController
 @RequestMapping("/rbms")
@@ -75,6 +78,21 @@ public class RoomsBookingController {
 	@GetMapping("/bookings")
 	public List<RoomsBooking> fetchAllBookings() {
 		return roomsBookingService.fetchAllBookings();
+	}
+
+	/**
+	 * Cancel a booking
+	 *
+	 * @param id the id
+	 * 
+	 */
+	@ApiOperation(value = "Cancel Booking", response = RoomsBooking.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success | OK"),
+			@ApiResponse(code = 404, message = "Booking not found"),
+			@ApiResponse(code = 400, message = "Bad request, id should be number") })
+	@GetMapping("/bookings/{id}")
+	public void cancelBooking(@PathVariable(value = "id") Long id) {
+		roomsBookingService.cancelBooking(id);
 	}
 
 }

@@ -11,6 +11,8 @@ import javax.persistence.PreUpdate;
 
 /**
  * The Class BaseEntity.
+ * 
+ * @author ankadlak
  */
 @MappedSuperclass
 public class BaseEntity {

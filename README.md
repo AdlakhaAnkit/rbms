@@ -1,1 +1,1 @@
-# rbms
+# Room Booking Management System

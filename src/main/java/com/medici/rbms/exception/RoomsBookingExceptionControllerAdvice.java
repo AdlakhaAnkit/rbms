@@ -21,6 +21,8 @@ import com.medici.rbms.constants.RBMSConstants;
 
 /**
  * The Class RoomsBookingExceptionControllerAdvice.
+ * 
+ * @author ankadlak
  */
 @ControllerAdvice
 public class RoomsBookingExceptionControllerAdvice extends ResponseEntityExceptionHandler {

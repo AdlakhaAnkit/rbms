@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 
  * Class RoomsBookingRequest- Represent the booking request object.
  * 
- * @author ankit
+ * @author ankadlak
  *
  */
 @ApiModel(value = "BookingRequest", description = "Room Booking Request")

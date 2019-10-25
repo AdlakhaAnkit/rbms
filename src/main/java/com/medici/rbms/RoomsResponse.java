@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class RoomsBookingResponse- Represent the rooms availability response.
  * 
- * @author ankit
+ * @author ankadlak
  *
  */
 public class RoomsResponse {

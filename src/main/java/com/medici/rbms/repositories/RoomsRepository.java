@@ -9,6 +9,8 @@ import com.medici.rbms.entities.Rooms;
 
 /**
  * The Interface RoomsRepository.
+ * 
+ * @author ankadlak
  */
 @Repository
 public interface RoomsRepository extends CrudRepository<Rooms, Long> {

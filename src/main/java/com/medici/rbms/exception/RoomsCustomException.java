@@ -4,6 +4,8 @@ import org.springframework.http.HttpStatus;
 
 /**
  * The Class RoomsCustomException.
+ * 
+ * @author ankadlak
  */
 public class RoomsCustomException extends RuntimeException {
 

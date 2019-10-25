@@ -29,8 +29,9 @@ import com.medici.rbms.repositories.RoomsTypeRepository;
 
 /**
  * The Class RoomsBookingService- - It provides functionality: 1. Get all
- * available rooms 2. Booking request 3. Get All Bookings
+ * available rooms 2. Booking request 3. Get All Bookings 4. Cancel a bookiing
  * 
+ * @author ankadlak
  */
 @Service
 public class RoomsBookingService {
@@ -221,6 +222,23 @@ public class RoomsBookingService {
 				.findAllByEntityStatusAndEndDateGreaterThanEqual(EntityStatus.ACTIVE, today);
 		log.info("END-->fetchAllBookings");
 		return response;
+	}
+
+	/**
+	 * Cancel booking.
+	 *
+	 * @param id the id
+	 */
+	public void cancelBooking(Long id) {
+		log.info("START-->cancelBooking");
+		RoomsBooking booking = roomsBookingRepository.findByIdAndEntityStatus(id, EntityStatus.ACTIVE);
+		if (null == booking) {
+			log.error("Booking details not found");
+			throw new RoomsCustomException(HttpStatus.NOT_FOUND, RBMSConstants.BOOKING_NOT_FOUND);
+		}
+		booking.setEntityStatus(EntityStatus.INACTIVE);
+		roomsBookingRepository.save(booking);
+		log.info("END-->cancelBooking");
 	}
 
 }

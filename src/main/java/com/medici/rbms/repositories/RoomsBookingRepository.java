@@ -13,7 +13,7 @@ import com.medici.rbms.entities.RoomsBooking;
 /**
  * The Interface RoomsBookingRepository.
  *
- * @author ankit
+ * @author ankadlak
  */
 @Repository
 public interface RoomsBookingRepository extends CrudRepository<RoomsBooking, Long> {
@@ -42,5 +42,14 @@ public interface RoomsBookingRepository extends CrudRepository<RoomsBooking, Lon
 	 * @return the list
 	 */
 	List<RoomsBooking> findAllByEntityStatusAndEndDateGreaterThanEqual(EntityStatus active, LocalDate today);
+
+	/**
+	 * Find by id and entity status.
+	 *
+	 * @param id the id
+	 * @param active the active
+	 * @return the rooms booking
+	 */
+	RoomsBooking findByIdAndEntityStatus(Long id, EntityStatus active);
 
 }

@@ -8,6 +8,8 @@ import javax.persistence.Id;
 
 /**
  * The Class Rooms.
+ * 
+ * @author ankadlak
  */
 @Entity(name = "ROOMSTYPE")
 public class RoomsType {
