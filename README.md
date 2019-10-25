@@ -2,17 +2,13 @@
 
 ## Available Functionality
 
-1. Fetch All Bookings
-   /bookings
+1. Fetch All Bookings- /bookings
 
-2. Fetch All Rooms Availability
-   /rooms
+2. Fetch All Rooms Availability- /rooms
    
-3. Book a room
-   /booking
+3. Book a room- /booking
    
-4. Cancel a booking
-   /booking/{id}
+4. Cancel a booking- /booking/{id}
 
 ## Database Tables
 
