@@ -19,7 +19,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.medici.rbms.constants.RBMSConstants;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class RoomsBookingExceptionControllerAdvice.
  */

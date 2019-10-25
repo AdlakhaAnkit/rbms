@@ -25,7 +25,8 @@ public class ApplicationInitializer {
 
 	@Bean
 	public Docket productApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
+		return new Docket(DocumentationType.SWAGGER_2).useDefaultResponseMessages(false).select()
 				.apis(RequestHandlerSelectors.basePackage("com.medici.rbms")).build();
 	}
+
 }

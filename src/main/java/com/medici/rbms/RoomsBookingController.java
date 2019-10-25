@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.medici.rbms.entities.RoomsBooking;
 import com.medici.rbms.service.RoomsBookingService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 /**
  * The Class RoomsBookingController- It provides functionality: 1. Get all
  * available rooms /rooms 2. Booking request /booking 3. Get All Bookings
@@ -40,6 +44,10 @@ public class RoomsBookingController {
 	 * @return the rooms booking
 	 * @throws Exception the exception
 	 */
+	@ApiOperation(value = "Book a room", response = RoomsBooking.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Booking Done| Success | OK"),
+			@ApiResponse(code = 404, message = "Rooms Not Available"),
+			@ApiResponse(code = 400, message = "Bad Request, Input not valid") })
 	@PostMapping("/booking")
 	public RoomsBooking bookRooms(@Validated @RequestBody RoomsBookingRequest roomsBookingRequest) throws Exception {
 		return roomsBookingService.bookRooms(roomsBookingRequest);
@@ -50,6 +58,8 @@ public class RoomsBookingController {
 	 *
 	 * @return the list
 	 */
+	@ApiOperation(value = "Get All Rooms Availability", response = RoomsResponse.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success | OK") })
 	@GetMapping("/rooms")
 	public List<RoomsResponse> fetchAllRoomsAvailability() {
 		return roomsBookingService.fetchAllRoomsAvailability();
@@ -60,6 +70,8 @@ public class RoomsBookingController {
 	 *
 	 * @return the list
 	 */
+	@ApiOperation(value = "Get All Bookings", response = RoomsBooking.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Success | OK") })
 	@GetMapping("/bookings")
 	public List<RoomsBooking> fetchAllBookings() {
 		return roomsBookingService.fetchAllBookings();

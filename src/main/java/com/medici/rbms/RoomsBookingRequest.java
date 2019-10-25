@@ -9,6 +9,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.medici.rbms.validator.DateValidator;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 
  * Class RoomsBookingRequest- Represent the booking request object.
@@ -16,23 +19,23 @@ import com.medici.rbms.validator.DateValidator;
  * @author ankit
  *
  */
-//@ApiModel(value = "BookingRequest", description = "Room Booking Request")
+@ApiModel(value = "BookingRequest", description = "Room Booking Request")
 public class RoomsBookingRequest {
 
 	/** The Room Type Id. */
-	// @ApiModelProperty(value = "Room Type Id")
+	@ApiModelProperty(value = "Room Type Id")
 	@NotNull(message = "Room Id is mandatory")
 	private Long roomTypeId;
 
 	/** Room Booking Start Date. */
-	// @ApiModelProperty(value = "Check-in Date")
+	@ApiModelProperty(value = "Check-in Date")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd MMM yyyy")
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	@DateValidator(message = "Start date is mandatory, Only Today's or Future Date is allowed")
 	private LocalDate startDate;
 
 	/** Room Booking End Date. */
-	// @ApiModelProperty(value = "Check-out Date")
+	@ApiModelProperty(value = "Check-out Date")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd MMM yyyy")
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	@DateValidator(message = "End date is mandatory, Only Future Date is allowed")
